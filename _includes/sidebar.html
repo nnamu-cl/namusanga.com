@@ -1,0 +1,33 @@
+<aside class="sidebar">
+  <a class="identity" href="{{ base | default: './' }}">
+    <img class="avatar" src="{{ base }}assets/img/profile.png" alt="{{ site.author }}" width="72" height="72">
+    <span class="identity-text">
+      <span class="identity-name">{{ site.author }}</span>
+      <span class="identity-role">{{ site.tagline }}</span>
+    </span>
+  </a>
+  <a class="button" href="{{ base }}{{ site.resume }}">Download resume (PDF)</a>
+  <p class="blurb">{{ site.blurb }}</p>
+  <p class="social">Find me on:
+    {%- for s in site.social %} <a href="{{ s.url }}" rel="me noopener">{{ s.name }}</a>{% endfor %}
+  </p>
+  <nav class="nav" aria-label="Site">
+    <p class="nav-title">Pages</p>
+    <ul>
+      <li><a href="{{ base | default: './' }}"{% if page.url == "/" %} aria-current="page"{% endif %}>Home</a></li>
+      {%- for item in site.data.nav.pages %}
+      <li><a href="{{ base }}{{ item.path }}"{% if page.url == item.match %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+      {%- endfor %}
+    </ul>
+    <p class="nav-title">Posts</p>
+    <ul>
+      {%- for item in site.data.nav.posts %}
+      <li><a href="{{ base }}{{ item.path }}"{% if page.url contains item.match %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+      {%- endfor %}
+    </ul>
+  </nav>
+  <div class="sidebar-contact">
+    <p class="nav-title">Want to get in touch?</p>
+    <p>Feel free to reach out via email:<br><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+  </div>
+</aside>

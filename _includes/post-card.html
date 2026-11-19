@@ -1,0 +1,7 @@
+{%- comment -%} A linked cover image and title for one post. Pass post=<post>. {%- endcomment -%}
+<a class="card" href="{{ base }}{{ include.post.url | remove_first: '/' }}">
+  {%- if include.post.cover %}
+  <img src="{{ base }}assets/img/{{ include.post.cover }}" alt="" loading="lazy">
+  {%- endif %}
+  <span class="card-title">{{ include.post.title }}</span>
+</a>

@@ -1,0 +1,28 @@
+{%- if page.url == "/" -%}
+  {%- assign page_title = site.title | append: ", " | append: site.tagline -%}
+{%- elsif page.layout == "post" or page.layout == "category" -%}
+  {%- assign page_title = page.title | append: " | " | append: site.title -%}
+{%- else -%}
+  {%- assign page_title = page.seo_title | default: page.title | default: site.title -%}
+{%- endif -%}
+{%- assign page_desc = page.description | default: site.description | strip_newlines | escape -%}
+{%- assign og_image = page.cover | default: "quantum-monte-carlo-cuda-cover.png" -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page_title | escape }}</title>
+<meta name="description" content="{{ page_desc }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{{ page_title | escape }}">
+<meta property="og:description" content="{{ page_desc }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:image" content="{{ site.url }}/assets/img/{{ og_image }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="{{ base }}assets/img/profile.png">
+<link rel="stylesheet" href="{{ base }}assets/css/main.css">
+{%- if page.math %}
+<link rel="stylesheet" href="{{ base }}assets/vendor/katex/katex.min.css">
+<script defer src="{{ base }}assets/vendor/katex/katex.min.js"></script>
+<script defer src="{{ base }}assets/vendor/katex/auto-render.min.js" onload="renderMathInElement(document.body)"></script>
+{%- endif %}

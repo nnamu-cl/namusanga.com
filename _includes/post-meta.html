@@ -1,0 +1,12 @@
+{%- comment -%} Date and category links for one post. Pass post=<post>. {%- endcomment -%}
+<p class="post-meta">
+  <time datetime="{{ include.post.date | date: '%Y-%m-%d' }}">{{ include.post.date | date: "%B %-d, %Y" }}</time>
+  {%- for c in include.post.categories %}
+    {%- assign cat = site.data.categories | where: "name", c | first %}
+    {%- if cat %}
+  <a class="tag" href="{{ base }}categories/{{ cat.slug }}/">{{ c }}</a>
+    {%- else %}
+  <span class="tag">{{ c }}</span>
+    {%- endif %}
+  {%- endfor %}
+</p>

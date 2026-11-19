@@ -1,0 +1,18 @@
+{%- comment -%}
+  Usage in a post: {% include figure.html src="name.png" alt="..." label="Figure 1" caption="..." %}
+  src is a file in assets/img/. label and caption are optional; caption takes markdown.
+{%- endcomment -%}
+{%- include base.html -%}
+<figure class="figure">
+  <img src="{{ base }}assets/img/{{ include.src }}" alt="{{ include.alt }}" loading="lazy">
+  {%- if include.label or include.caption %}
+  <figcaption>
+    {%- if include.label %}
+    <span class="figure-label">{{ include.label }}</span>
+    {%- endif %}
+    {%- if include.caption %}
+    {{ include.caption | markdownify }}
+    {%- endif %}
+  </figcaption>
+  {%- endif %}
+</figure>

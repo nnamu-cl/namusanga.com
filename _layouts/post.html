@@ -1,0 +1,49 @@
+---
+layout: default
+---
+{%- include base.html -%}
+<article class="post">
+  <p class="breadcrumb"><a href="{{ base | default: './' }}">Home</a> <span aria-hidden="true">&gt;</span> <a href="{{ base }}archive">All Posts</a></p>
+  <h1>{{ page.title }}</h1>
+  {% include post-meta.html post=page %}
+  {%- if page.cover %}
+  <img class="cover" src="{{ base }}assets/img/{{ page.cover }}" alt="">
+  {%- endif %}
+  <div class="prose">
+{{ content }}
+  </div>
+
+  {%- assign share_url = site.url | append: page.url | url_encode %}
+  <p class="share">Share this post:
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url }}" rel="noopener">LinkedIn</a>
+    <a href="https://x.com/intent/post?url={{ share_url }}&amp;text={{ page.title | url_encode }}" rel="noopener">X</a>
+  </p>
+
+  <nav class="pager" aria-label="Posts">
+    {%- if page.next %}
+    <a class="pager-prev" href="{{ base }}{{ page.next.url | remove_first: '/' }}"><span>Previous</span>{{ page.next.title }}</a>
+    {%- endif %}
+    {%- if page.previous %}
+    <a class="pager-next" href="{{ base }}{{ page.previous.url | remove_first: '/' }}"><span>Next</span>{{ page.previous.title }}</a>
+    {%- endif %}
+  </nav>
+
+  {%- assign related = "" | split: "" %}
+  {%- for post in site.posts %}
+    {%- if post.url != page.url %}
+      {%- for c in post.categories %}
+        {%- if page.categories contains c %}{% assign related = related | push: post %}{% break %}{% endif %}
+      {%- endfor %}
+    {%- endif %}
+  {%- endfor %}
+  {%- if related.size > 0 %}
+  <section class="related">
+    <h2>Related Posts:</h2>
+    <div class="cards">
+      {%- for post in related limit: 3 %}
+      {% include post-card.html post=post %}
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}
+</article>

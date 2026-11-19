@@ -1,0 +1,11 @@
+{%- comment -%}
+  Sets `base`: the relative path from the current page back to the site root ("" at the
+  root, "../" one folder down). Every internal link is written as {{ base }}path, so the
+  site works unchanged at namusanga.com and under nnamu-cl.github.io/namusanga.com/.
+{%- endcomment -%}
+{%- assign _len = page.url | size -%}
+{%- assign _bare = page.url | remove: "/" | size -%}
+{%- assign _depth = _len | minus: _bare | minus: 1 -%}
+{%- assign base = "" -%}
+{%- if _depth > 0 -%}{%- for _i in (1.._depth) -%}{%- assign base = base | append: "../" -%}{%- endfor -%}{%- endif -%}
+{%- if page.root_links -%}{%- assign base = "/" -%}{%- endif -%}

@@ -1,0 +1,21 @@
+---
+layout: default
+---
+{%- include base.html -%}
+{%- assign cat = site.data.categories | where: "name", page.category | first -%}
+<article class="page">
+  <p class="breadcrumb"><a href="{{ base | default: './' }}">Home</a> <span aria-hidden="true">&gt;</span> <a href="{{ base }}categories">Categories</a></p>
+  <h1>{{ page.category }}</h1>
+  {%- if cat.image %}
+  <img class="cover" src="{{ base }}assets/img/{{ cat.image }}" alt="">
+  {%- endif %}
+  <p class="lede">{{ cat.description }}</p>
+  <h2>Read Posts:</h2>
+  <div class="cards">
+    {%- for post in site.posts %}
+      {%- if post.categories contains page.category %}
+    {% include post-card.html post=post %}
+      {%- endif %}
+    {%- endfor %}
+  </div>
+</article>
