@@ -30,3 +30,9 @@ the same build is correct at `https://namusanga.com/` and at
 docker run --rm -p 4000:4000 -v "$PWD":/site -w /site ruby:3.3 \
   sh -c "gem install github-pages webrick && jekyll serve --host 0.0.0.0"
 ```
+
+## Going live on namusanga.com
+
+`main` carries no `CNAME` file on purpose. GitHub couples that file to the custom domain setting,
+and once it is set the `nnamu-cl.github.io/namusanga.com/` preview redirects to `namusanga.com`.
+Pull request #1 ("Go live") adds the file and lists the DNS records; merge it on switch day.
