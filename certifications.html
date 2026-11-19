@@ -1,0 +1,16 @@
+---
+title: Certifications
+permalink: /certifications
+sitemap_order: 4
+description: Certifications held by Nicholas Namusanga, with links to the credentials.
+---
+<p class="lede">Credentials with a verifiable record. Each links to the issuer’s certificate page.</p>
+
+{%- for c in site.data.certifications %}
+<section class="role">
+  <h3>{{ c.title }}</h3>
+  <p class="entry-sub">{{ c.issuer_long | default: c.issuer }}, issued {{ c.issued | date: "%B %Y" }}</p>
+  <p>{{ c.description }}</p>
+  <p><a href="{{ c.url }}" rel="noopener">View credential</a></p>
+</section>
+{%- endfor %}

@@ -1,0 +1,17 @@
+---
+title: Categories
+permalink: /categories
+sitemap_order: 6
+---
+{%- include base.html -%}
+<p class="lede">Every post is filed under one or more of these. Projects are the public repositories with their write-ups; the GPU series is the standalone pieces; the rest group both by topic.</p>
+
+<div class="cards">
+  {%- for c in site.data.categories %}
+  <a class="card" href="{{ base }}categories/{{ c.slug }}/">
+    <img src="{{ base }}assets/img/{{ c.image }}" alt="" loading="lazy">
+    <span class="card-title">{{ c.name }}</span>
+    <span class="card-text">{{ c.description }}</span>
+  </a>
+  {%- endfor %}
+</div>

@@ -1,0 +1,38 @@
+---
+title: Experience
+permalink: /experience
+sitemap_order: 3
+description: "GPU and CUDA engineering roles held by Nicholas Namusanga: Jugo, NitroSpark AI and Union One."
+tools: >-
+  C++, CUDA, Vulkan, GLSL and Slang, Python. Nsight Compute and Nsight Systems for profiling, PTX
+  and SASS inspection, cuSPARSE and the NPP libraries as baselines, OpenMP references on the CPU
+  side.
+---
+{%- include base.html -%}
+<p class="lede">Ten years of low-level C++ on compute and memory bound workloads. The roles below are the GPU ones; each is described by what ran on the card and what was measured.</p>
+
+{%- for e in site.data.experience %}
+<section class="role">
+  <header class="role-head">
+    {%- if e.logo %}
+    <img class="role-logo" src="{{ base }}assets/img/{{ e.logo }}" alt="{{ e.company }}" width="48" height="48" loading="lazy">
+    {%- endif %}
+    <div>
+      <h3>{{ e.role }}</h3>
+      <p class="entry-sub">{{ e.company }} · {{ e.type }}</p>
+      <p class="entry-sub">{{ e.start | date: "%B %Y" }} to {% if e.end %}{{ e.end | date: "%B %Y" }}{% else %}Present{% endif %} · {{ e.location }} · {{ e.mode }}</p>
+    </div>
+  </header>
+  {%- for d in e.details %}
+  <p>{{ d }}</p>
+  {%- endfor %}
+  {%- if e.skills.size > 0 %}
+  <p class="role-skills"><strong>Skills</strong><br>{{ e.skills | join: ", " }}</p>
+  {%- endif %}
+</section>
+{%- endfor %}
+
+<section class="role">
+  <h3>Tools</h3>
+  <p>{{ page.tools }}</p>
+</section>

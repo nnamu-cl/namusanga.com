@@ -1,0 +1,86 @@
+---
+layout: default
+title: Home
+sitemap_order: 1
+headline: I build and optimize CUDA kernels and GPU pipelines for AI and HPC workloads.
+intro:
+  - >-
+    I work below the framework line: kernels written by hand, SASS read in Nsight Compute, memory
+    traffic priced in bytes per element before the first line is written. Ten years of low-level
+    C++ on compute and memory bound workloads across AI compute, real-time video, simulation and
+    numerical methods.
+  - >-
+    Open to remote GPU kernel and performance work, contract or full-time.
+---
+{%- include base.html -%}
+<section class="hero">
+  <p class="kicker">{{ site.location_line }}</p>
+  <h1>{{ page.headline }}</h1>
+  {%- for p in page.intro %}
+  <p>{{ p }}</p>
+  {%- endfor %}
+  <p class="actions">
+    <a class="button" href="{{ base }}{{ site.resume }}">Download resume (PDF)</a>
+    <a class="button button-quiet" href="{{ base }}contact">Get in touch</a>
+  </p>
+</section>
+
+<section>
+  <header class="section-head"><h2>Experience</h2><a href="{{ base }}experience">All experience</a></header>
+  {%- for e in site.data.experience %}
+  <div class="entry">
+    <p class="entry-date">{{ e.start | date: "%b %Y" }} to {% if e.end %}{{ e.end | date: "%b %Y" }}{% else %}Present{% endif %}</p>
+    <h3>{{ e.role }} · {{ e.company }}</h3>
+    <p class="entry-sub">{{ e.type }} · {{ e.mode }} · {{ e.location }}</p>
+    <p>{{ e.summary }}</p>
+    {%- if e.skills.size > 0 %}
+    <p class="entry-skills">{{ e.skills | join: " · " | remove: " (HPC)" }}</p>
+    {%- endif %}
+  </div>
+  {%- endfor %}
+</section>
+
+<section>
+  <header class="section-head"><h2>Featured projects</h2><a href="{{ base }}projects">All projects</a></header>
+  <div class="cards">
+    {%- for p in site.data.projects %}
+    <a class="card" href="{{ base }}{{ p.path }}">
+      <img src="{{ base }}assets/img/{{ p.image }}" alt="" loading="lazy">
+      <span class="card-title">{{ p.title }}</span>
+      <span class="card-text">{{ p.summary }}</span>
+    </a>
+    {%- endfor %}
+  </div>
+</section>
+
+<section>
+  <header class="section-head"><h2>Certifications</h2><a href="{{ base }}certifications">All certifications</a></header>
+  {%- for c in site.data.certifications %}
+  <a class="entry entry-link" href="{{ c.url }}" rel="noopener">
+    <p class="entry-date">{{ c.issued | date: "%b %Y" }}</p>
+    <h3>{{ c.title }} · {{ c.issuer }}</h3>
+    <p>{{ c.description }}</p>
+  </a>
+  {%- endfor %}
+</section>
+
+<section>
+  <header class="section-head"><h2>Skills</h2></header>
+  <ul class="chips">
+    {%- for s in site.data.skills %}
+    <li>{{ s }}</li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section>
+  <header class="section-head"><h2>Writing</h2><a href="{{ base }}archive">All articles</a></header>
+  {%- for post in site.posts %}
+  <a class="entry entry-link" href="{{ base }}{{ post.url | remove_first: '/' }}">
+    <p class="entry-date">{{ post.date | date: "%-d %b %Y" }}</p>
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.summary }}</p>
+    <p class="entry-skills">{{ post.categories | join: " · " }}</p>
+  </a>
+  {%- endfor %}
+</section>

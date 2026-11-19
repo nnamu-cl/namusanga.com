@@ -1,0 +1,20 @@
+---
+title: Archive
+seo_title: Nicholas Namusanga
+permalink: /archive
+sitemap_order: 8
+math: true
+---
+{%- include base.html -%}
+{%- for post in site.posts %}
+<article class="post archive-post">
+  <h2><a href="{{ base }}{{ post.url | remove_first: '/' }}">{{ post.title }}</a></h2>
+  {% include post-meta.html post=post %}
+  {%- if post.cover %}
+  <img class="cover" src="{{ base }}assets/img/{{ post.cover }}" alt="" loading="lazy">
+  {%- endif %}
+  <div class="prose">
+{{ post.content | replace: 'src="../', 'src="' | replace: 'href="../', 'href="' }}
+  </div>
+</article>
+{%- endfor %}

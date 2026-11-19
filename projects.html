@@ -1,0 +1,17 @@
+---
+title: Projects
+permalink: /projects
+sitemap_order: 5
+description: CUDA and GPU projects by Nicholas Namusanga, each with measured numbers and the profiler evidence behind them.
+---
+{%- include base.html -%}
+<p class="lede">Kernels and engines I have built and measured. Each write-up carries its numbers, the profiler evidence behind them and what the next step would be.</p>
+
+<div class="cards">
+  {%- for p in site.data.projects %}
+  <a class="card" href="{{ base }}{{ p.path }}">
+    <img src="{{ base }}assets/img/{{ p.cover }}" alt="" loading="lazy">
+    <span class="card-title">{{ p.title }}</span>
+  </a>
+  {%- endfor %}
+</div>
