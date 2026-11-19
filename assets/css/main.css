@@ -154,6 +154,7 @@ a.tag:hover { border-color: #444; }
   .sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--border); padding: 20px; }
   .avatar { width: 52px; height: 52px; }
   .blurb, .sidebar-contact { display: none; }
+  .social { margin: 12px 0 0; }
   .nav { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-top: 10px; }
   .nav-title { display: none; }
   .nav ul { display: contents; }
