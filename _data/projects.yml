@@ -1,0 +1,17 @@
+# Featured projects, in display order. path is the write-up, relative to the site root.
+# image is the card on the home page, cover the card on /projects (files in assets/img/).
+
+- title: Optimizing Quantum Monte Carlo Sampling in CUDA
+  path: blog/quantum-monte-carlo-cuda
+  image: quantum-monte-carlo-cuda-card.png
+  cover: quantum-monte-carlo-cuda-cover.png
+  summary: >-
+    Monte Carlo hydrogen orbital sampler, 0.56 to 14.6 Gsamples/s. CUDA, cuRAND, Nsight Compute.
+
+- title: "psiEngine: a Vulkan engine for looking at GPU physics"
+  path: blog/psiengine
+  image: psiengine-card.png
+  cover: psiengine-cover.png
+  summary: >-
+    Visual quantum physics compute engine: Vulkan rendering, GPU compute, a typed node graph and
+    Lua scripting, built to draw hydrogen orbitals.

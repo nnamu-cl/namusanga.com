@@ -1,0 +1,76 @@
+# One entry per role, newest first. Shown on the home page (summary) and on /experience (details).
+# start and end are dates (YYYY-MM-DD, day is ignored); leave end empty for a current role.
+# logo is optional: a file in assets/img/.
+
+- role: Senior HPC Engineer
+  company: Jugo
+  type: Contract
+  mode: Remote
+  location: United Kingdom
+  start: 2026-03-01
+  end: 2026-09-01
+  logo: logo-jugo.jpg
+  summary: >-
+    Custom CUDA kernels for live AI video on Jugo's immersive meetings platform, which renders
+    real-time 3D environments in Unreal Engine on cloud GPUs. Built the GPU compositing stage that
+    injects game-engine frames into NVIDIA DeepStream, and cut P95 per-frame latency from 25.1 ms
+    to 18.3 ms on RTX PRO 6000 Blackwell through Nsight-driven profiling.
+  details:
+    - >-
+      Built and optimized custom CUDA kernels for live AI video processing on Jugo's immersive
+      meetings platform, which renders real-time 3D environments in Unreal Engine on cloud GPUs.
+    - >-
+      Developed the GPU compositing stage that injects game-engine frames into NVIDIA DeepStream
+      and overlays them with live video.
+    - >-
+      Optimized kernels on RTX PRO 6000 Blackwell, cutting P95 per-frame latency from 25.1 ms to
+      18.3 ms and reducing jitter under high network latency. Nsight-driven profiling of compute
+      and memory bound stages: occupancy, launch configuration and memory coalescing.
+  skills:
+    - HIP/ROCm
+    - System Performance
+    - C++
+    - CUDA
+    - High Performance Computing (HPC)
+    - GPGPU
+    - Performance Tuning
+
+- role: Co-founder & Technical Lead
+  company: NitroSpark AI
+  type: Full-time
+  mode: Hybrid
+  location: United Kingdom
+  start: 2024-06-01
+  end: 2026-04-01
+  summary: >-
+    Co-founded NitroSpark AI and served as Technical Lead.
+  details:
+    - >-
+      Co-founded NitroSpark AI and served as Technical Lead.
+  skills: []
+
+- role: GPU Systems Engineer
+  company: Union One
+  type: Contract
+  mode: Remote
+  location: United Kingdom
+  start: 2018-08-01
+  end: 2024-08-01
+  logo: logo-union-one.png
+  summary: >-
+    Delivered the GPU-resident render pipeline for Union One, a tactical FPS: particle systems and
+    related effects computed on the GPU rather than the CPU, with Vulkan driving rendering and the
+    surrounding engine systems. Managed systems under frame budget and memory layout constraints,
+    profiled and optimized to target per-frame time budget.
+  details:
+    - >-
+      Delivered the GPU-resident render pipeline for Union One, a tactical FPS: particle systems
+      and related effects computed on the GPU rather than the CPU, with Vulkan driving rendering
+      and the surrounding engine systems. Managed systems under frame budget and memory layout
+      constraints, profiled and optimized to target per-frame time budget.
+  skills:
+    - System Performance
+    - OpenGL Shading Language (GLSL)
+    - C++
+    - GPGPU
+    - Performance Tuning

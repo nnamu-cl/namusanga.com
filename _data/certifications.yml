@@ -1,0 +1,18 @@
+# One entry per credential, newest first. issued is a date (YYYY-MM-DD, day is ignored).
+
+- title: GPU Programming
+  issuer: Johns Hopkins University
+  issuer_long: Johns Hopkins University on Coursera
+  issued: 2026-04-01
+  description: >-
+    Four-course specialization covering CUDA kernels, memory hierarchy, streams and concurrency,
+    and the CUDA libraries, finished with a capstone project.
+  url: https://www.coursera.org/account/accomplishments/records/JFDBV8V90LGJ
+
+- title: Anthropic Certified API Developer
+  issuer: Anthropic
+  issuer_long: Anthropic
+  issued: 2025-11-01
+  description: >-
+    Tool use, function-call orchestration and multi-step workflows on the Anthropic API.
+  url: https://verify.skilljar.com/c/aka9a6fbk8od

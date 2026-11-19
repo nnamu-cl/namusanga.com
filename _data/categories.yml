@@ -1,0 +1,35 @@
+# Post categories. name must match the name used in a post's `categories:` list.
+# Each category also needs a page in categories/<slug>.md (copy an existing one).
+
+- name: Projects
+  slug: projects
+  image: quantum-monte-carlo-cuda-cover.png
+  description: >-
+    Public GPU repositories, each written up with the numbers, the profiler evidence and what the
+    next step would be.
+
+- name: GPU Series
+  slug: gpu-series
+  image: category-gpu-series.png
+  description: >-
+    Standalone pieces on CUDA kernels: memory traffic, occupancy, SASS and what Nsight Compute
+    actually says.
+
+- name: CUDA
+  slug: cuda
+  image: category-cuda.png
+  description: >-
+    Kernels, cuRAND, NPP and the rest of the CUDA toolkit in practice.
+
+- name: Profiling
+  slug: profiling
+  image: category-gpu-series.png
+  description: >-
+    Nsight Compute and Nsight Systems: reading stall reasons and pricing memory traffic before
+    writing a line.
+
+- name: Vulkan
+  slug: vulkan
+  image: category-vulkan.png
+  description: >-
+    Rendering and GPU-driven pipelines on the graphics side of the same hardware.

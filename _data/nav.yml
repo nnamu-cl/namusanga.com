@@ -1,0 +1,10 @@
+# Sidebar links. path is relative to the site root, match marks the current page.
+pages:
+  - { title: Experience, path: experience, match: /experience }
+  - { title: Projects, path: projects, match: /projects }
+  - { title: Certifications, path: certifications, match: /certifications }
+  - { title: About, path: about, match: /about }
+  - { title: Contact, path: contact, match: /contact }
+posts:
+  - { title: Archive, path: archive, match: /archive }
+  - { title: Categories, path: categories, match: /categories }
