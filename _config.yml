@@ -1,0 +1,66 @@
+# Site settings. Content lives in _posts/ (writing) and _data/ (experience, certifications, projects).
+title: Nicholas Namusanga
+tagline: GPU Kernel Engineer
+description: >-
+  CUDA kernel engineer. Project write-ups with the numbers and the Nsight evidence, plus a GPU
+  series on memory traffic, occupancy and SASS. Open to remote contract or full-time GPU work.
+url: https://namusanga.com
+baseurl: ""
+
+# Shown in the sidebar and the home hero. The location line must match every other profile.
+author: Nicholas Namusanga
+location_line: "GPU kernel engineer · United Kingdom · remote"
+email: hey@namusanga.com
+resume: resume/nicholas_namusanga_cuda_kernel_engineer.pdf
+blurb: >-
+  CUDA kernel development, PTX/SASS-level performance tuning and Nsight profiling, on ten years
+  of low-level C++ across simulation, real-time video and graphics.
+social:
+  - name: LinkedIn
+    url: https://www.linkedin.com/in/nichwithn/
+  - name: GitHub
+    url: https://github.com/nnamu-cl
+  - name: X
+    url: https://x.com/hey_namusanga
+
+timezone: Africa/Nairobi
+future: true
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+  math_engine: mathjax
+  syntax_highlighter: rouge
+  # keep typed punctuation as typed: no automatic dashes, ellipses or curly quotes
+  typographic_symbols:
+    ndash: "--"
+    mdash: "---"
+    hellip: "..."
+    laquo: "<<"
+    raquo: ">>"
+    laquo_space: "<< "
+    raquo_space: " >>"
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      permalink: /blog/:slug
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+
+exclude:
+  - README.md
+  - CONTENT.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - assets/vendor/katex/LICENSE

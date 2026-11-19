@@ -1,0 +1,14 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- assign listed = site.pages | where_exp: "p", "p.sitemap_order != nil" | sort: "sitemap_order" %}
+{%- for p in listed %}
+<url><loc>{{ site.url }}{{ p.url }}</loc></url>
+{%- endfor %}
+{%- for post in site.posts %}
+<url><loc>{{ site.url }}{{ post.url }}</loc></url>
+{%- endfor %}
+</urlset>
